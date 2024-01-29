@@ -112,7 +112,8 @@ else:
 
 
 # 証券コード検索機能
-df = pd.read_excel('./dataJP.xls')
+df = pd.read_excel('./dataJP2.xls')
+
 company_name_input = st.sidebar.text_input("銘柄名を入力して証券コードを検索(日本株)　例: <トヨタ> <愛知>")
 
 if company_name_input:
@@ -120,6 +121,6 @@ if company_name_input:
 
     if not result.empty:
         for _, row in result.iterrows():
-            st.sidebar.write(f"銘柄名: {row['銘柄名']} - 証券コード: {row['コード']}.T")
+            st.sidebar.write(f"銘柄名: {row['銘柄名']} - 証券コード: {row['コード']:.0f}.T")
     else:
         st.sidebar.write("該当する銘柄は見つかりませんでした。")
