@@ -16,7 +16,7 @@ st.markdown("""
 
 st.markdown('<h1 class="title">株価・株式情報表示アプリ</h1>', unsafe_allow_html=True)
 
-symbol = st.text_input('証券コードを入力してEnterを押してください（例: <9211.T> <GOOGL>）', '9211.T')
+symbol = st.text_input('証券コードを入力してEnterを押してください（例: <9211.T> <GOOGL>）', '')
 if not symbol.strip():
     st.error("証券コードを入力してください。")
 else:
@@ -112,7 +112,7 @@ else:
 
 
 # 証券コード検索機能
-df = pd.read_excel('./dataJP2.xls')
+df = pd.read_excel('./dataJP.xls')
 
 company_name_input = st.sidebar.text_input("銘柄名を入力して証券コードを検索(日本株)　例: <トヨタ> <愛知>")
 
