@@ -2,6 +2,7 @@ import yfinance as yf
 import plotly.graph_objs as go
 import streamlit as st
 
+st.set_page_config(page_title="指数・為替")
 st.markdown("""
     <style>
     .title {
@@ -26,7 +27,7 @@ nikkei_current = nikkei_hist['Close'].iloc[-1]
 usdjpy_current = usdjpy_hist['Close'].iloc[-1]
 
 # 日経平均
-st.markdown(f"## 日経平均株価　{nikkei_current:.2f}", unsafe_allow_html=True)
+st.markdown(f"## 日経平均　{nikkei_current:.2f}", unsafe_allow_html=True)
 
 nikkei_fig = go.Figure()
 nikkei_fig.add_trace(go.Scatter(x=nikkei_hist.index, y=nikkei_hist['Close'],

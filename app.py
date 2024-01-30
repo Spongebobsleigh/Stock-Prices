@@ -5,7 +5,7 @@ from plotly.subplots import make_subplots
 import datetime
 import pandas as pd
 
-
+st.set_page_config(page_title="株価・株式情報")
 st.markdown("""
     <style>
     .title {
